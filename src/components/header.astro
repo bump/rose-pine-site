@@ -3,7 +3,7 @@ import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import Logotype from "$components/logotype.svelte";
 import LanguageSelect from "$components/language-select.svelte";
-import CommandMenuTrigger from "$components/command-menu-trigger";
+import { IconSearch } from "./icons";
 
 function isCurrentPage(url: string) {
 	return Astro.url.pathname.replace(/(\/.*?)\/$/, "$1") === localizePath(url);
@@ -16,7 +16,7 @@ const menu = [
 ];
 ---
 
-<header class="flex h-header-height justify-center px-page-gutter">
+<header x-data class="flex h-header-height justify-center px-page-gutter">
 	<div
 		class="flex w-full max-w-content items-center justify-between space-x-2.5"
 	>
@@ -108,9 +108,15 @@ const menu = [
 								<li class="my-3 border-t" aria-hidden="true"></li>
 
 								<li>
-									<CommandMenuTrigger client:load size="lg">
-										{t("global_search.trigger")}
-									</CommandMenuTrigger>
+									<button
+										@click="$store.commandOpen = true"
+										class="flex h-10 w-full items-center rounded-md border bg-overlay px-3 text-sm font-[550] hover:bg-muted/10"
+									>
+										<IconSearch size={16} class="text-subtle" />
+										<span class="pl-1.5 pr-3">Search</span>
+										<div class="flex-1"></div>
+										<kbd class="font-mono text-xs text-muted">⌘K</kbd>
+									</button>
 								</li>
 							</ul>
 						</div>
@@ -142,9 +148,15 @@ const menu = [
 				<li class="h-6 border-r" aria-hidden="true"></li>
 
 				<li>
-					<CommandMenuTrigger client:load size="sm">
-						{t("global_search.trigger")}
-					</CommandMenuTrigger>
+					<button
+						@click="$store.commandOpen = true"
+						class="flex h-7 w-full items-center rounded-md border bg-overlay px-1.5 text-sm font-[550] hover:bg-muted/10"
+					>
+						<IconSearch size={16} class="text-subtle" />
+						<span class="pl-1.5 pr-3">Search</span>
+						<div class="flex-1"></div>
+						<kbd class="font-mono text-xs text-muted">⌘K</kbd>
+					</button>
 				</li>
 			</ul>
 		</nav>

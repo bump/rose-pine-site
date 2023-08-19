@@ -277,3 +277,7 @@ details summary::-webkit-details-marker {
 [cmdk-empty] {
 	@apply -mx-1.5 space-y-6 sm:-mx-3;
 }
+
+[x-cloak] {
+	display: none !important;
+}

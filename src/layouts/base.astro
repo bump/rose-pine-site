@@ -6,7 +6,7 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import Banner from "$components/banner.svelte";
 import Header from "$components/header.astro";
 import Footer from "$components/footer.svelte";
-import CommandMenu from "$components/command-menu";
+import CommandPalette from "$components/command-palette.astro";
 import { themes } from "$data/themes";
 import { pathname } from "$store";
 import "../global.css";
@@ -135,15 +135,6 @@ const groups = [
 
 		<Footer />
 
-		<CommandMenu
-			client:load
-			groups={groups}
-			searchText={t("global_search.placeholder")}
-			emptyText={t("global_search.empty_text")}
-			emptyResults={[
-				[t("global_search.empty_result_1"), localizePath("/themes")],
-				[t("global_search.empty_result_2"), localizePath("/resources")],
-			]}
-		/>
+		<CommandPalette />
 	</body>
 </html>
