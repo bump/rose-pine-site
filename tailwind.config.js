@@ -3,6 +3,16 @@ export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
 		extend: {
+			spacing: {
+				header: "var(--header-height)",
+			},
+			maxWidth: {
+				shell: "var(--shell-width)",
+				content: "var(--content-width)",
+			},
+			minHeight: {
+				content: "var(--content-height)",
+			},
 			colors: {
 				base: "hsl(var(--color-base) / <alpha-value>)",
 				surface: "hsl(var(--color-surface) / <alpha-value>)",

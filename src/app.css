@@ -10,13 +10,19 @@
 	--color-overlay: 33deg 43% 91%;
 	--color-muted: 257deg 9% 61%;
 	--color-subtle: 248deg 12% 52%;
-	--color-text: 248deg 19% 40%;
+	--color-text: 248deg 19% 32%;
 	--color-love: 343deg 35% 55%;
 	--color-gold: 35deg 81% 56%;
 	--color-rose: 3deg 53% 67%;
 	--color-pine: 197deg 53% 34%;
 	--color-foam: 189deg 30% 48%;
 	--color-iris: 268deg 21% 57%;
+
+	--shell-width: theme("maxWidth.7xl");
+	--content-width: theme("maxWidth.5xl");
+
+	--header-height: theme("height.16");
+	--content-height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,18 +43,32 @@
 }
 
 ::selection {
-	background: hsl(var(--color-muted) / 0.2);
+	@apply bg-muted/20;
 }
 
 html {
-	color: theme("colors.text");
-	background: theme("colors.base");
-	scroll-behavior: smooth;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	@apply scroll-smooth bg-base text-text underline-offset-2 antialiased;
 }
 
 html,
 body {
-	height: 100%;
+	@apply h-full;
+}
+
+.animate-enter {
+	opacity: 0;
+	animation: enter 500ms forwards;
+	animation-delay: calc(var(--stagger) * 200ms);
+}
+
+@keyframes enter {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }
