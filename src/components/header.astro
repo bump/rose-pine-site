@@ -1,0 +1,199 @@
+---
+let menu = [
+	{ label: "Themes", href: "/themes" },
+	{ label: "Palette", href: "/palette" },
+	{ label: "Resources", href: "/resources" },
+];
+let socials = [
+	{ label: "Discord", href: "https://discord.com/r6wf35KVJW" },
+	{ label: "GitHub", href: "https://github.com/rose-pine" },
+	{ label: "Twitter", href: "https://twitter.com/rosepinetheme" },
+];
+---
+
+<header
+	x-data="{ show_menu: false }"
+	class="fixed inset-x-0 top-0 z-20 bg-base px-gap"
+>
+	<nav
+		aria-label="Primary"
+		class="mx-auto flex h-header-height max-w-content-width items-center justify-between gap-6"
+	>
+		<div class="flex shrink-0 items-center gap-6">
+			<a href="/" class="flex shrink-0 items-center gap-3">
+				<svg
+					width="24"
+					height="22.5"
+					viewBox="0 0 198 187"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<path
+						opacity="0.5"
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+						d="M98.9826 151.358C94.1842 139.832 84.2792 130.579 71.2866 127.098L18.5184 112.959C16.5426 112.429 14.5117 113.602 13.9823 115.577C7.36463 140.275 22.0212 165.661 46.7187 172.279L90.5431 184.021C93.3816 184.782 96.2705 183.981 98.2983 182.146C100.3 184.672 103.68 185.908 106.99 185.021L150.815 173.279C175.512 166.661 190.169 141.275 183.551 116.577C183.022 114.602 180.991 113.429 179.015 113.959L126.247 128.098C113.632 131.478 103.928 140.298 98.9826 151.358Z"
+						fill="hsl(var(--color-pine))"></path>
+					<path
+						d="M148 137C120.386 137 98 159.386 98 187V187L151.704 187C177.272 187 198 166.272 198 140.704V140.704C198 138.658 196.342 137 194.296 137L148 137Z"
+						fill="hsl(var(--color-pine))"></path>
+					<path
+						d="M50 137C77.6142 137 100 159.386 100 187V187L46.2963 187C20.7276 187 -1.27954e-06 166.272 -1.61894e-07 140.704V140.704C-7.24825e-08 138.658 1.6582 137 3.7037 137L50 137Z"
+						fill="hsl(var(--color-pine))"></path>
+					<path
+						opacity="0.9"
+						d="M116.071 65.0938C128.855 42.9506 121.268 14.6362 99.1252 1.85185V1.85185C97.3538 0.8291 95.0886 1.43604 94.0659 3.2075L84 20.6421C70.1929 44.5567 78.3866 75.1363 102.301 88.9434V88.9434L116.071 65.0938Z"
+						fill="hsl(var(--color-rose))"></path>
+					<path
+						d="M98.2788 44.7188C91.6611 20.0213 66.2751 5.36469 41.5776 11.9824V11.9824C39.6018 12.5118 38.4293 14.5427 38.9587 16.5185L50.941 61.2372C58.0881 87.9105 85.505 103.74 112.178 96.5926V96.5926L98.2788 44.7188Z"
+						fill="hsl(var(--color-rose))"></path>
+					<path
+						d="M99.8995 44.7188C106.517 20.0213 131.903 5.36469 156.601 11.9824V11.9824C158.576 12.5118 159.749 14.5427 159.22 16.5185L147.237 61.2372C140.09 87.9105 112.673 103.74 85.9999 96.5926V96.5926L99.8995 44.7188Z"
+						fill="hsl(var(--color-rose))"></path>
+				</svg>
+
+				<svg
+					width="76"
+					height="14"
+					viewBox="0 0 76 14"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<path
+						d="M10.5166 5.51195C10.5166 7.36101 9.49589 8.91069 7.94666 9.72075L10.8811 13.912H7.63681L5.13981 10.3195H2.9162V13.912H0V0.704402H5.46788C8.27473 0.704402 10.5166 2.78239 10.5166 5.51195ZM2.9162 3.04654V7.97736H5.26739C6.81663 7.97736 7.60036 6.93836 7.60036 5.51195C7.60036 4.08553 6.81663 3.04654 5.26739 3.04654H2.9162Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M15.5558 4.84277C18.144 4.84277 20.4223 6.49811 20.4223 9.43899C20.4223 12.3799 18.144 14 15.5558 14C12.9677 14 10.6894 12.3799 10.6894 9.43899C10.6894 6.49811 12.9677 4.84277 15.5558 4.84277ZM15.5558 6.9912C14.1889 6.9912 13.5145 8.01258 13.5145 9.43899C13.5145 10.8478 14.1889 11.8516 15.5558 11.8516C16.9228 11.8516 17.5972 10.8478 17.5972 9.43899C17.5972 8.01258 16.9228 6.9912 15.5558 6.9912Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M23.8163 7.5195C23.8163 7.94214 24.1079 8.15346 25.566 8.80503C27.0242 9.43899 27.9901 10.1786 27.9901 11.4465C27.9901 13.1019 26.4774 14 24.5454 14C23.142 14 21.4105 13.4189 20.4262 12.3447L22.0666 10.7597C22.8139 11.4994 23.707 11.8516 24.3084 11.8516C24.8735 11.8516 25.1651 11.6579 25.1651 11.2881C25.1651 10.7245 24.5089 10.4075 23.2878 9.82642C21.7021 9.06918 20.9913 8.38239 20.9913 7.30818C20.9913 5.4239 23.0873 4.84277 24.3813 4.84277C25.6572 4.84277 27.17 5.28302 28.0631 6.3044L26.4774 7.83648C26.0035 7.36101 25.3473 6.9912 24.6183 6.9912C24.2902 6.9912 23.8163 7.14969 23.8163 7.5195Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M33.9359 3.09937H32.0039L33.6625 0L35.795 0.880503L33.9359 3.09937ZM37.6358 9.40377V10.3019L31.2566 10.2491C31.2566 11.2704 32.2955 11.8516 33.3344 11.8516C34.0635 11.8516 34.9019 11.5698 35.4487 11.0063L37.1255 12.5031C36.1413 13.4365 34.8837 14 33.1886 14C30.236 14 28.4316 11.9748 28.4316 9.40377C28.4316 6.8327 30.236 4.84277 33.0246 4.84277C35.8679 4.84277 37.6358 6.79748 37.6358 9.40377ZM31.2566 8.59371H34.8108C34.8108 7.62516 34.0453 6.9912 33.0246 6.9912C32.0404 6.9912 31.2566 7.62516 31.2566 8.59371Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M53.0588 5.67044C53.0588 8.41761 50.9992 10.6365 47.8643 10.6365H45.4767V13.912H42.5605V0.704402H47.8643C50.9992 0.704402 53.0588 2.94088 53.0588 5.67044ZM45.4767 8.29434H47.6456C49.1766 8.29434 50.1426 7.11447 50.1426 5.67044C50.1426 4.24403 49.1766 3.04654 47.6456 3.04654H45.4767V8.29434Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M56.7998 1.88428C56.7998 2.60629 56.1983 3.16981 55.3963 3.16981C54.6308 3.16981 53.9929 2.60629 53.9929 1.88428C53.9929 1.19748 54.6308 0.616352 55.3963 0.616352C56.1983 0.616352 56.7998 1.19748 56.7998 1.88428ZM56.7815 4.93082V13.912H53.9747V4.93082H56.7815Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M66.2249 8.52327L66.2431 13.912H63.5456V8.69937C63.5456 7.36101 63.0353 6.79748 61.9782 6.79748C60.8846 6.79748 60.4107 7.36101 60.4107 8.69937V13.912H57.7132V4.93082H60.4107V5.93459C60.9939 5.21258 62.0693 4.84277 63.0353 4.84277C65.186 4.84277 66.2249 6.02264 66.2249 8.52327Z"
+						fill="hsl(var(--color-text))"></path>
+					<path
+						d="M76 9.40377V10.3019L69.6208 10.2491C69.6208 11.2704 70.6597 11.8516 71.6986 11.8516C72.4276 11.8516 73.2661 11.5698 73.8128 11.0063L75.4897 12.5031C74.5054 13.4365 73.2478 14 71.5528 14C68.6001 14 66.7957 11.9748 66.7957 9.40377C66.7957 6.8327 68.6001 4.84277 71.3888 4.84277C74.2321 4.84277 76 6.79748 76 9.40377ZM69.6208 8.59371H73.1749C73.1749 7.62516 72.4094 6.9912 71.3888 6.9912C70.4045 6.9912 69.6208 7.62516 69.6208 8.59371Z"
+						fill="hsl(var(--color-text))"></path>
+				</svg>
+
+				<p class="sr-only font-display text-lg tracking-tight">Rosé Pine</p>
+			</a>
+
+			<ul role="list" class="hidden items-center gap-6 sm:flex">
+				{
+					menu.map((item) => (
+						<li>
+							<a
+								aria-current={
+									item.href === Astro.url.pathname ? "page" : undefined
+								}
+								href={item.href}
+								class="text-[15px] font-medium text-subtle aria-[current=page]:text-text"
+							>
+								{item.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+
+		<div class="flex items-center gap-3">
+			<button
+				class="flex size-9 items-center justify-center rounded-full transition hover:bg-overlay"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					class="h-5 w-5"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
+
+			<details class="group sm:hidden">
+				<summary
+					@click="show_menu = !show_menu"
+					class="flex size-9 cursor-pointer items-center justify-center rounded-full transition hover:bg-overlay [&::-webkit-details-marker]:hidden"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="h-6 w-6 group-open:hidden"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+							clip-rule="evenodd"></path>
+					</svg>
+
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="hidden h-6 w-6 group-open:inline-block"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</summary>
+
+				<ul
+					x-trap.noscroll="show_menu"
+					role="list"
+					class="fixed inset-0 top-header-height z-10 flex select-none flex-col divide-y overflow-y-auto border-t bg-base sm:hidden"
+				>
+					{
+						menu.map((item) => (
+							<li>
+								<a
+									aria-current={
+										item.href === Astro.url.pathname ? "page" : undefined
+									}
+									href={item.href}
+									class="flex h-20 items-center px-6 font-display text-3xl font-bold transition hover:bg-muted/10"
+								>
+									{item.label}
+								</a>
+							</li>
+						))
+					}
+					<li
+						class="flex min-h-20 flex-wrap items-center gap-6 p-6 text-lg font-semibold text-subtle"
+					>
+						{
+							socials.map((item) => (
+								<a
+									href={item.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="transition after:align-super after:text-xs after:text-muted after:content-['_↗'] hover:text-text"
+								>
+									{item.label}
+								</a>
+							))
+						}
+					</li>
+				</ul>
+			</details>
+		</div>
+	</nav>
+</header>

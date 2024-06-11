@@ -1,0 +1,159 @@
+@font-face {
+	font-family: "Pier Sans";
+	font-display: fallback;
+	font-style: normal;
+	font-weight: bold;
+	src: url("/fonts/PierSans-Bold.otf") format("opentype");
+}
+
+:root {
+	--gap: theme(spacing.6);
+	--header-height: theme(spacing.20);
+	--content-height: calc(100vh - var(--header-height) - var(--gap) * 2);
+	--content-width: theme(maxWidth.7xl);
+
+	@media screen(sm) {
+		--gap: theme(spacing.10);
+	}
+
+	color-scheme: light;
+
+	--color-base: 32deg 57% 95%;
+	--color-surface: 35deg 100% 98%;
+	--color-overlay: 33deg 43% 91%;
+	--color-muted: 257deg 9% 61%;
+	--color-subtle: 248deg 12% 52%;
+	--color-text: 248deg 19% 40%;
+	--color-love: 343deg 35% 55%;
+	--color-gold: 35deg 81% 56%;
+	--color-rose: 3deg 53% 67%;
+	--color-pine: 197deg 53% 34%;
+	--color-foam: 189deg 30% 48%;
+	--color-iris: 268deg 21% 57%;
+
+	@media (prefers-color-scheme: dark) {
+		color-scheme: dark;
+
+		--color-base: 249deg 22% 12%;
+		--color-surface: 247deg 23% 15%;
+		--color-overlay: 248deg 25% 18%;
+		--color-muted: 249deg 12% 47%;
+		--color-subtle: 248deg 15% 61%;
+		--color-text: 245deg 50% 91%;
+		--color-love: 343deg 76% 68%;
+		--color-gold: 35deg 88% 72%;
+		--color-rose: 2deg 55% 83%;
+		--color-pine: 197deg 49% 38%;
+		--color-foam: 189deg 43% 73%;
+		--color-iris: 267deg 57% 78%;
+	}
+
+	&[data-theme="main"] {
+		color-scheme: dark;
+
+		--color-base: 249deg 22% 12%;
+		--color-surface: 247deg 23% 15%;
+		--color-overlay: 248deg 25% 18%;
+		--color-muted: 249deg 12% 47%;
+		--color-subtle: 248deg 15% 61%;
+		--color-text: 245deg 50% 91%;
+		--color-love: 343deg 76% 68%;
+		--color-gold: 35deg 88% 72%;
+		--color-rose: 2deg 55% 83%;
+		--color-pine: 197deg 49% 38%;
+		--color-foam: 189deg 43% 73%;
+		--color-iris: 267deg 57% 78%;
+	}
+
+	&[data-theme="moon"] {
+		color-scheme: dark;
+
+		--color-base: 246deg 24% 17%;
+		--color-surface: 248deg 24% 20%;
+		--color-overlay: 248deg 21% 26%;
+		--color-muted: 249deg 12% 47%;
+		--color-subtle: 248deg 15% 61%;
+		--color-text: 245deg 50% 91%;
+		--color-love: 343deg 76% 68%;
+		--color-gold: 35deg 88% 72%;
+		--color-rose: 2deg 66% 75%;
+		--color-pine: 197deg 48% 47%;
+		--color-foam: 189deg 43% 73%;
+		--color-iris: 267deg 57% 78%;
+	}
+
+	&[data-theme="dawn"] {
+		color-scheme: light;
+
+		--color-base: 32deg 57% 95%;
+		--color-surface: 35deg 100% 98%;
+		--color-overlay: 33deg 43% 91%;
+		--color-muted: 257deg 9% 61%;
+		--color-subtle: 248deg 12% 52%;
+		--color-text: 248deg 19% 40%;
+		--color-love: 343deg 35% 55%;
+		--color-gold: 35deg 81% 56%;
+		--color-rose: 3deg 53% 67%;
+		--color-pine: 197deg 53% 34%;
+		--color-foam: 189deg 30% 48%;
+		--color-iris: 268deg 21% 57%;
+	}
+}
+
+::selection {
+	background-color: hsl(var(--color-muted) / 0.2);
+}
+
+html,
+body {
+	width: 100%;
+}
+
+html {
+	color: theme(colors.text);
+	background-color: theme(colors.base);
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+[id] {
+	scroll-margin-top: calc(var(--header-height) + var(--gap));
+}
+
+.animate-enter {
+	opacity: 0;
+	animation: enter 500ms forwards;
+	animation-delay: calc(var(--stagger) * 200ms);
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: enter-reduced 500ms forwards;
+		animation-delay: 200ms !important;
+	}
+}
+
+@keyframes enter {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes enter-reduced {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

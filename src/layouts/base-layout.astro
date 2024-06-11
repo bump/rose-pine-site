@@ -1,0 +1,36 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import "../global.css";
+
+let { title = "", description = "" } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
+		{title ? <title>{title} - Rosé Pine</title> : <title>Rosé Pine</title>}
+		<meta name="description" content={description} />
+		<meta property="og:image" content="/opengraph-image.jpg" />
+	</head>
+
+	<body>
+		<a href="#content" class="sr-only focus:not-sr-only">Skip to main content</a
+		>
+
+		<Header />
+
+		<main id="content" class="mt-header-height p-gap">
+			<div class="mx-auto min-h-content-height max-w-content-width">
+				<slot />
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>
