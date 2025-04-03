@@ -266,6 +266,15 @@
 		"has_variants": true
 	},
 	{
+		"name": "NotePlan",
+		"url": "https://github.com/bump/rose-pine-noteplan",
+		"tags": ["app", "productivity"],
+		"authors": [
+			{ "name": "bump", "url": "https://github.com/bump" }
+		]
+		"has_variants": true
+	},
+	{
 		"name": "Nova",
 		"url": "https://github.com/daveyholler/rose-pine-nova",
 		"tags": ["app", "editor"],
